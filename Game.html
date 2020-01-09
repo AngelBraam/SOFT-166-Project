@@ -42,7 +42,7 @@
     <input type="radio" id="radSDeath" name="Score" onclick="enableStart()" value="1"> Sudden Death<br>
     <input type="radio" id="radThree" name="Score" onclick="enableStart()" value="3"> First to three<br>
     <input type="radio" id="radFive" name="Score" onclick="enableStart()" value="5"> First to five<br>
-    <input type="button" id="btnStart" onclick="gameStart" value="Start" disabled="true"><br>
+    <input type="button" id="btnStart" onclick="gameStart()" value="Start" disabled="true"><br>
     <span id="spnScore">Score: </span>
 
 </div>
@@ -78,13 +78,14 @@
     }
 
     function gameStart(){
-        if(document.getElementById("radSDeath").checked){
+        if(document.getElementById("radSDeath").checked = true){
             winCondition = 1;
-        }else if(document.getElementById("radThree").checked){
+        }else if(document.getElementById("radThree").checked = true){
             winCondition = 3;
         }else{
             winCondition = 5;
         }
+        document.getElementById("btnStart").disabled = true;
     }
 
     function placePieces(square){
