@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         .grid-container {
             display: grid;
@@ -19,16 +23,27 @@
             border: 1px solid black;
             padding: 20px;
             font-size: 100px;
+            height: 150px;
+            width: 150px;
             text-align: center;
         }
     </style>
 </head>
 <body>
+<div class="w3-container">
+    <h1><b>Noughts and Crosses</b></h1>
+    <div class="w3-section w3-bottombar w3-padding-16">
+        <a href="Index.html" style="decoration:none"><button class="w3-button w3-white"><i class="fas fa-info-circle w3-margin-right"></i>Profile</button></a>
+        <a href="About.html" style="decoration:none"> <button class="w3-button w3-white w3-hide-small"><i class="far fa-play-circle  w3-margin-right"></i>About</button></a>
+    </div>
+</div>
 <div style="text-align: center">
-    Select a win condition to start the game<br>
-    <input type="radio" name="Score" value="1"> Sudden Death<br>
-    <input type="radio" name="Score" value="3"> First to three<br>
-    <input type="radio" name="Score" value="5"> First to five
+    Select a win condition and press the button to start the game<br>
+    <input type="radio" id="radSDeath" name="Score" onclick="enableStart()" value="1"> Sudden Death<br>
+    <input type="radio" id="radThree" name="Score" onclick="enableStart()" value="3"> First to three<br>
+    <input type="radio" id="radFive" name="Score" onclick="enableStart()" value="5"> First to five<br>
+    <input type="button" id="btnStart" value="Start" disabled="true">
+
 </div>
 <div>
     <div class="grid-container">
@@ -43,21 +58,43 @@
         <div id="2-2" class="grid-item" onclick="placePieces(this)"></div>
     </div>
 </div>
+</body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
 </html>
 
 <script>
 
-    var currentPlayer = 0;
+    var currentPlayer = "O";
     var scoreOne = 0;
     var scoreTwo = 0;
+    var winCondition;
 
-    function placePieces(){
+
+
+    function placePieces(square){
+        square.innerText = currentPlayer;
+        currentPlayer == "O" ? currentPlayer = "X" : currentPlayer = "O";
+        checkBoard()
+    }
+    
+    function checkBoard() {
+        for (var i = 0; i <= 2; i++){
+            checkWin(document.getElementById(i + "-0").innerText, document.getElementById(i + "-1").innerText, document.getElementById(i + "-2"));
+        }
+
+    }
+    function enableStart(){
+        document.getElementById("btnStart").disabled = false;
+    }
+
+    function checkWin(){
 
     }
 
-    function score
+    function scoring(){
+
+
+    }
 </script>
