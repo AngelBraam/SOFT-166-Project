@@ -19,6 +19,7 @@ the winner.
 https://youtu.be/3bLeCPew2v4
 
 ### Screenshots
-![alt text]("Images/Screenshot_2020-01-10 Title.png" "Profile Page")
-![alt text]("Images/Screenshot_2020-01-10 Game.png" "Game")
-![alt text]("Images/Screenshot_2020-01-10 Game Win.png" "Game win condition")
+![alt text](Images/Screenshot_2020-01-10 Title.png "Profile Page")
+![alt text](Images/Screenshot_2020-01-10 Game.png "Game")
+![alt text](Images/Screenshot_2020-01-10 Game Win.png "Game win condition")
+![alt text](Images/Microsoft Edge - SOFT 166.PNG" "Testing in Edge")
