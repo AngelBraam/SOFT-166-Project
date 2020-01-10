@@ -96,8 +96,8 @@
     
     function checkBoard() {
         for (var i = 0; i <= 2; i++){
-            checkWin(document.getElementById(i + "-0").innerText, document.getElementById(i + "-1").innerText, document.getElementById(i + "-2"));
-            checkWin(document.getElementById("0_" + i).innerText, document.getElementById("1_" + i).innerText, document.getElementById("2_" + i).innerText);
+            checkWin(document.getElementById(i + "-0").innerText, document.getElementById(i + "-1").innerText, document.getElementById(i + "-2").innerText);
+            checkWin(document.getElementById("0-" + i).innerText, document.getElementById("1-" + i).innerText, document.getElementById("2-" + i).innerText);
         }
         checkWin(document.getElementById("0-0").innerText, document.getElementById("1-1").innerText, document.getElementById("2-2").innerText);
         checkWin(document.getElementById("0-2").innerText, document.getElementById("1-1").innerText, document.getElementById("2-0").innerText);
@@ -111,6 +111,7 @@
             scoreX = scoreX + 1;
         }
         scoring();
+        checkWinner();
         }
     }
 
